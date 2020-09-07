@@ -1,0 +1,55 @@
+:root {
+	--grid-width: 117rem;
+	/*   margin bottom giữa các row */
+	--gutter-vertical: 3rem;
+	/*   giá trị khoảng cách giữa các column */
+	--gutter-horizontal: 3rem;
+}
+.container {
+	max-width: var(--grid-width);
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.container:not(:last-child) {
+	margin-bottom: 3rem;
+}
+.container [class^="col-"] {
+	float: left;
+}
+.container [class^="col-"]:not(:last-child) {
+	margin-right: var(--gutter-horizontal);
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.col-1-of-2 {
+	width: calc((100% - var(--gutter-horizontal)) / 2);
+}
+.col-1-of-3 {
+	width: calc((100% - 2 * var(--gutter-horizontal)) / 3);
+}
+.col-2-of-3 {
+	width: calc(
+		2 * ((100% - 2 * var(--gutter-horizontal)) / 3) + var(--gutter-horizontal)
+	);
+}
+.col-1-of-4 {
+	width: calc((100% - 3 * var(--gutter-horizontal)) / 4);
+}
+.col-2-of-4 {
+	width: calc(
+		2 * ((100% - 3 * var(--gutter-horizontal)) / 4) + var(--gutter-horizontal)
+	);
+}
+.col-3-of-4 {
+	width: calc(
+		3 * ((100% - 3 * var(--gutter-horizontal)) / 4) + 2 *
+			var(--gutter-horizontal)
+	);
+}
